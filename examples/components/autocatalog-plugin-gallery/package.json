@@ -12,6 +12,6 @@
     }
   },
   "dependencies": {
-    "autocatalog-core": "workspace:*"
+    "autocatalog-core": "^0.12.0"
   }
 }

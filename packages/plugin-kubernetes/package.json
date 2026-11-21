@@ -5,12 +5,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jagreehal/autocatalog.git",
-    "directory": "packages/events/plugin-kubernetes"
+    "url": "git+https://github.com/jagreehal/autocatalog-plugins.git",
+    "directory": "packages/plugin-kubernetes"
   },
   "homepage": "https://jagreehal.github.io/autocatalog",
   "bugs": {
-    "url": "https://github.com/jagreehal/autocatalog/issues"
+    "url": "https://github.com/jagreehal/autocatalog-plugins/issues"
   },
   "type": "module",
   "main": "./dist/index.js",
@@ -36,10 +36,11 @@
   },
   "scripts": {
     "build": "tsup",
-    "test": "vitest run"
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "autocatalog-core": "workspace:*",
+    "autocatalog-core": "^0.12.0",
     "commander": "^15.0.0",
     "kleur": "^4.1.5",
     "yaml": "^2.9.1",

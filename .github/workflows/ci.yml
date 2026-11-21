@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  workflow_call:
+  pull_request:
+  # The plugins install autocatalog from npm, so a core release can break them
+  # with no change here. A weekly run notices.
+  schedule:
+    - cron: '0 6 * * 1'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: ./.github/actions/setup-pnpm
+
+      - name: Lint
+        run: pnpm lint
+
+      # One turbo run, so each plugin's tests start once it is built.
+      - name: Build, type-check and test
+        run: pnpm turbo run build typecheck test
+
+  examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: ./.github/actions/setup-pnpm
+
+      - run: pnpm turbo run build
+
+      - name: Publish the component examples through two plugins
+        run: pnpm verify:components
+
+      - name: Publish the REST API examples through Kong and Kubernetes
+        run: pnpm verify:rest-apis

@@ -12,7 +12,7 @@ The tests and `pnpm verify:components` read these apps.
 | `autocatalog-plugin-gallery` | The plugin that reads it, and all it takes: one call to `writeComponents`        |
 
 ```bash
-pnpm turbo run build --filter=autocatalog-cli... --filter=autocatalog-plugin-storybook...
+pnpm turbo run build --filter=autocatalog-plugin-storybook...
 pnpm verify:components            # in a temporary folder
 pnpm verify:components ./work     # kept, to look at the site it built
 ```

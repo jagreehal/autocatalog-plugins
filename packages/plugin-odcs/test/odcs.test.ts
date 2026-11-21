@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
-import { scanModelResources } from 'autocatalog-core';
+import { scanModelResources } from 'autocatalog-core/plugin';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { findContracts, runFromOdcs } from '../src/index';
 

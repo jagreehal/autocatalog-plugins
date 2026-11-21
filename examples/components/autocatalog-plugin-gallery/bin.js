@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // `ac from-gallery [--check]`: gallery.json into autocatalog.components.json.
 import fs from 'node:fs/promises';
-import { writeComponents } from 'autocatalog-core';
+import { writeComponents } from 'autocatalog-core/plugin';
 
 const gallery = JSON.parse(await fs.readFile('gallery.json', 'utf8'));
 

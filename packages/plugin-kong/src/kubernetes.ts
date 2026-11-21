@@ -1,4 +1,4 @@
-import type { GatewayRoute } from 'autocatalog-core';
+import type { GatewayRoute } from 'autocatalog-core/plugin';
 import { z } from 'zod';
 import { AUTHENTICATION, authenticates } from './authentication';
 

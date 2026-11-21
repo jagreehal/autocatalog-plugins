@@ -5,7 +5,7 @@ import {
   type NetworkFile,
   type NetworkPeer,
   type NetworkWorkload,
-} from 'autocatalog-core';
+} from 'autocatalog-core/plugin';
 import kleur from 'kleur';
 import { parseAllDocuments } from 'yaml';
 import { z } from 'zod';

@@ -12,7 +12,7 @@ One API and the services that call it, published as one company site.
 | `company-site` | the lock                                                                                      |
 
 ```bash
-pnpm turbo run build --filter=autocatalog-cli... --filter=autocatalog-plugin-kong --filter=autocatalog-plugin-kubernetes
+pnpm turbo run build --filter=autocatalog-plugin-kong --filter=autocatalog-plugin-kubernetes
 pnpm verify:rest-apis           # in a temporary folder
 pnpm verify:rest-apis ./work    # kept, to look at the site it built
 ```

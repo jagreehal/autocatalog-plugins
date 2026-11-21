@@ -1,0 +1,6 @@
+pnpm-lock.yaml
+**/dist/
+**/storybook-static/
+# Written by `ac from-kong` and `ac from-kubernetes`, and checked byte for byte.
+**/autocatalog.gateway.json
+**/autocatalog.network.json

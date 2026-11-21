@@ -3,7 +3,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import type { JsonObject } from 'autocatalog-core';
+import type { JsonObject } from 'autocatalog-core/plugin';
 import { runFromStorybook, storybookComponents } from '../src';
 
 const FILE = 'autocatalog.components.json';

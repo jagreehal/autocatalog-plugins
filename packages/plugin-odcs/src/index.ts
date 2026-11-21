@@ -19,7 +19,7 @@
 import { readFileSync } from 'node:fs';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { modelExports, readOptionalResourceJson, type ModelExport } from 'autocatalog-core';
+import { modelExports, readOptionalResourceJson, type ModelExport } from 'autocatalog-core/plugin';
 import { readDomainModel } from 'autocatalog-docs-core';
 import {
   diffContracts,

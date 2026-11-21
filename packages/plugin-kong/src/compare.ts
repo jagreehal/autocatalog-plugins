@@ -1,4 +1,4 @@
-import type { GatewayFile } from 'autocatalog-core';
+import type { GatewayFile } from 'autocatalog-core/plugin';
 
 /**
  * Each route as method × matcher, so two configurations compare whatever their

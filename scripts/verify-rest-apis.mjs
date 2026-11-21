@@ -9,6 +9,7 @@
 // removes a response field.
 import { spawnSync } from 'node:child_process';
 import { cpSync, existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { createRequire } from 'node:module';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 
@@ -16,11 +17,11 @@ const ROOT = path.resolve(import.meta.dirname, '..');
 
 const EXAMPLE = path.join(ROOT, 'examples/rest-apis');
 
-const BIN = path.join(ROOT, 'packages/events/cli/dist/bin.js');
+const BIN = createRequire(import.meta.url).resolve('autocatalog-cli/bin');
 
-const KONG = path.join(ROOT, 'packages/events/plugin-kong/dist/bin.js');
+const KONG = path.join(ROOT, 'packages/plugin-kong/dist/bin.js');
 
-const KUBERNETES = path.join(ROOT, 'packages/events/plugin-kubernetes/dist/bin.js');
+const KUBERNETES = path.join(ROOT, 'packages/plugin-kubernetes/dist/bin.js');
 
 const WORK = path.resolve(process.argv[2] ?? mkdtempSync(path.join(tmpdir(), 'ac-rest-apis-')));
 

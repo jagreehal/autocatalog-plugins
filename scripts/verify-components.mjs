@@ -11,7 +11,7 @@
 // lists every component: owners from a file and from CODEOWNERS, links into each
 // viewer, one name in two repositories, the owner pages, Markdown for agents, a
 // repository whose documents are all invalid, and a second site joining the
-// first through --index. Nothing outside the plugin knows Storybook's name.
+// first through --index.
 import { spawnSync } from 'node:child_process';
 import {
   cpSync,
@@ -22,6 +22,7 @@ import {
   rmSync,
   writeFileSync,
 } from 'node:fs';
+import { createRequire } from 'node:module';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 
@@ -29,7 +30,7 @@ const ROOT = path.resolve(import.meta.dirname, '..');
 
 const EXAMPLE = path.join(ROOT, 'examples/components');
 
-const BIN = path.join(ROOT, 'packages/events/cli/dist/bin.js');
+const BIN = createRequire(import.meta.url).resolve('autocatalog-cli/bin');
 
 const WORK = path.resolve(process.argv[2] ?? mkdtempSync(path.join(tmpdir(), 'ac-components-')));
 
@@ -198,18 +199,6 @@ const steps = {
 
     check(gallery.includes('Open in Gallery'), 'the viewer is not named', gallery.slice(0, 200));
     check(gallery.includes('https://gallery.acme.dev/#receipt-card/paid'), 'no link to the screen');
-  },
-
-  'nothing outside the plugin knows Storybook'() {
-    const site = 'packages/docs/astro/src';
-
-    for (const file of [
-      'packages/events/core/src/components.ts',
-      `${site}/components.ts`,
-      `${site}/ui/pages/ComponentPage.tsx`,
-      `${site}/ui/pages/ComponentsPage.tsx`,
-    ])
-      check(!/storybook/i.test(readFileSync(path.join(ROOT, file), 'utf8')), `${file} names it`);
   },
 
   'the graph carries components to everything that reads it'() {

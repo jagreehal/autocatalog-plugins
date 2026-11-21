@@ -1,0 +1,29 @@
+{
+  "name": "autocatalog-plugins",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.15.1",
+  "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "lint": "prettier --check .",
+    "verify:components": "node scripts/verify-components.mjs",
+    "verify:rest-apis": "node scripts/verify-rest-apis.mjs",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "pnpm build && changeset publish"
+  },
+  "devDependencies": {
+    "autocatalog-cli": "^0.13.1",
+    "@changesets/cli": "3.0.3",
+    "prettier": "^3.9.9",
+    "tsup": "^8.5.1",
+    "turbo": "^2.11.7",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.3"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

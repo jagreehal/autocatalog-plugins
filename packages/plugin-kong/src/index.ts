@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { writeGatewayFile, type GatewayFile, type GatewayRoute } from 'autocatalog-core';
+import { writeGatewayFile, type GatewayFile, type GatewayRoute } from 'autocatalog-core/plugin';
 import kleur from 'kleur';
 import { parseAllDocuments, parse as parseYaml } from 'yaml';
 import { z } from 'zod';

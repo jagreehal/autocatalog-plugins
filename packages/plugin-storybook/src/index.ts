@@ -6,7 +6,7 @@ import {
   writeComponents,
   type CatalogComponent,
   type JsonValue,
-} from 'autocatalog-core';
+} from 'autocatalog-core/plugin';
 import kleur from 'kleur';
 import { z } from 'zod';
 
