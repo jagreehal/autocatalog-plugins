@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "autocatalog-core": "^0.12.0",
-    "autocatalog-docs-core": "^0.12.0",
+    "autocatalog-docs-core": "^0.13.0",
     "autotel-datacontract": "^0.1.0",
     "commander": "^15.0.0",
     "kleur": "^4.1.5",
