@@ -1,5 +1,11 @@
 # autocatalog-plugin-odcs
 
+## 0.1.1
+
+### Patch Changes
+
+- 9df437b: Published from autocatalog-plugins with provenance, like the other plugins.
+
 ## 0.1.0
 
 ### Minor Changes
