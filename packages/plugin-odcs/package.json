@@ -1,6 +1,6 @@
 {
   "name": "autocatalog-plugin-odcs",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "ac from-odcs: put Open Data Contract Standard (ODCS) contracts on the company site as tables with their schema, and gate pull requests on breaking changes.",
   "license": "MIT",
   "repository": {

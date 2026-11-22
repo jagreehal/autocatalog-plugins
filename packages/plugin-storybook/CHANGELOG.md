@@ -1,5 +1,11 @@
 # autocatalog-plugin-storybook
 
+## 0.1.5
+
+### Patch Changes
+
+- 2185135: Released from this repository, and built on `autocatalog-core/plugin`, so a core release that changes anything else leaves the plugin working.
+
 ## 0.1.4
 
 ### Patch Changes
